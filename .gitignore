@@ -1,0 +1,6 @@
+*~
+auto/
+*.pdf
+*.log
+*.aux
+.ipynb_checkpoints/

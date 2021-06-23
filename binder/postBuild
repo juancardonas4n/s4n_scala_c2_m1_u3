@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+# Install coursier
+# curl -fLo cs https://github.com/coursier/coursier/releases/download/v2.0.3/cs-x86_64-pc-linux
+curl -Lo coursier https://git.io/coursier-cli
+chmod +x coursier
+
+SCALA_VERSION=2.12.11
+ALMOND_VERSION=0.10.9
+
+# Install almond for Scala 2.12
+./coursier launch --fork "almond:$ALMOND_VERSION" --scala $SCALA_VERSION -- \
+  --install \
+  --id scala212 \
+  --display-name "Scala (2.12)" \
+  --env "JAVA_OPTS=-XX:MaxRAMPercentage=80.0" \
+  --variable-inspector \
+  </dev/null 2>&1 | grep -v '^Download'
+

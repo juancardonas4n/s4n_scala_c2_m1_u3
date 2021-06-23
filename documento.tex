@@ -1,0 +1,48 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{tikz}
+%\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{color}
+\usepackage{amsmath}
+% \usepackage{bbm}
+\usepackage{txfonts}
+\usepackage{url}
+
+% \usepackage{pgflibraryarrows}
+% \usepackage{pgflibrarysnakes}
+% \usepackage{pgflibraryshapes}
+\usepackage{alltt}
+\usepackage{enumerate}
+\usetikzlibrary{automata,snakes,backgrounds,trees}
+
+\begin{document}
+
+\[
+  recursive(m,n) =
+  \begin{cases}
+    m = n, & n \\
+    m > n, & recursive(m-n,n) \\
+    m \leq n & recursive(n-m,m) \\
+  \end{cases}
+\]
+
+
+\[
+  binomial(m,n) =
+  \begin{cases}
+    k = 0 \vee n = k & 1 \\
+    \text{de otra forma} & binomial(n - 1,k - 1) + binomial(n - 1, k) \\
+  \end{cases}
+\]
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
