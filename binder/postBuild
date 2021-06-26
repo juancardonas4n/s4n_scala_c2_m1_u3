@@ -18,3 +18,23 @@ ALMOND_VERSION=0.10.9
   --variable-inspector \
   </dev/null 2>&1 | grep -v '^Download'
 
+jupyter contrib nbextension install --user
+# jupyter nbextension enable --py widgetsnbextension
+
+# Set indentation to two spaces
+JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
+
+# Classic notebook
+mkdir -p $JUPYTER_CONFIG_DIR/nbconfig/
+cat > $JUPYTER_CONFIG_DIR/nbconfig/notebook.json <<- EOF
+{
+  "CodeCell": {
+    "cm_config": {
+      "indentUnit": 2
+    }
+  },
+  "load_extensions": {
+    "exercise2/main": true
+  }
+}
+EOF
